@@ -95,7 +95,7 @@ async def receive_channel_username(message: types.Message):
             "I'm not an admin in this channel, or I don't have enough rights to post in it.\n\n"
             "Please make me an admin in your channel and grant me all necessary permissions",
             reply_markup=InlineKeyboardMarkup(inline_keyboard=[ 
-                [InlineKeyboardButton(text="How to make me an admin ❓", url="https://teletype.in/@giftsalerterbot/channel")],
+                [InlineKeyboardButton(text="How to make me an admin ❓", url="https://telegra.ph/How-to-add-bot-to-channel-01-13")],
                 [InlineKeyboardButton(text="Cancel ◀️", callback_data="main_menu")]
             ])
         )
