@@ -54,7 +54,7 @@ async def send_welcome(message: types.Message):
 @dp.callback_query(lambda cb: cb.data == "add_channel")
 async def add_channel(callback_query: types.CallbackQuery):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[ 
-        [InlineKeyboardButton(text="How to make me an admin ❓", url="https://teletype.in/@giftsalerterbot/channel")],
+        [InlineKeyboardButton(text="How to make me an admin ❓", url="https://telegra.ph/How-to-add-bot-to-channel-01-13")],
         [InlineKeyboardButton(text="Cancel ◀️", callback_data="main_menu")]
     ]) 
 
