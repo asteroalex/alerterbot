@@ -2,7 +2,8 @@ import asyncio
 import json
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.filters import Command
+from aiogram import types
+from aiogram.dispatcher.filters import Text
 
 API_TOKEN = "7577906602:AAE_h3DES98V779Lnm4v6mgUhAj3_qtrTPo"
 ADMIN_IDS = [1267171169]  # Only one admin ID (first admin)
@@ -34,7 +35,7 @@ def save_channels():
         json.dump(user_channels, f, indent=4)
 
 # Main menu
-@dp.message(Command(commands=["start"]))
+@dp.message_handler(commands=["start"])
 async def send_welcome(message: types.Message):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[ 
         [InlineKeyboardButton(text="Add to Channel ✅", callback_data="add_channel")],
@@ -115,7 +116,7 @@ async def notification_types(callback_query: types.CallbackQuery):
     )
 
 # /sendinfo command handler
-@dp.message(Command(commands=["sendinfo"]))
+@dp.message_handler(commands=["sendinfo"])
 async def send_info(message: types.Message):
     global waiting_for_admin_message
 
